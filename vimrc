@@ -30,10 +30,16 @@ augroup vimrc_autocmds
         autocmd FileType python set nowrap
 augroup END
 
+"Install airline
 Plugin 'bling/vim-airline'
-Bundle 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
+" Bundle 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
 " Powerline setup
 set laststatus=2
-set guifont=Liberation_Mono_for_Powerline:h10
+"set guifont=Liberation_Mono_for_Powerline:h10
 let g:airline_powerline_fonts = 1
-let g:Powerline_symbols = 'fancy'
+" let g:Powerline_symbols = 'fancy'
+let g:airline_theme='luna'
+let g:airline_left_sep='>'
+
+" the separator used on the right side  
+let g:airline_right_sep='<'
