@@ -8,6 +8,8 @@ set autoindent    " align the new line indent with the previous line
 set nocompatible  " dont know what this does
 filetype off      " Dont know what this does either
 set number        " Show line numbers 
+
+" Vundle related configs 
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 let moria_style='dark'
@@ -41,3 +43,5 @@ let g:airline_right_sep='<'
 
 " install git-fugitive
 Plugin 'tpope/vim-fugitive'
+
+Plugin 'Valloric/YouCompleteMe'
