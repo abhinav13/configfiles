@@ -11,7 +11,6 @@ set number        " Show line numbers
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 let moria_style='dark'
-color moria
 
 
 " let Vundle manage Vundle
@@ -30,16 +29,15 @@ augroup vimrc_autocmds
         autocmd FileType python set nowrap
 augroup END
 
-"Install airline
+" Install airline
 Plugin 'bling/vim-airline'
-" Bundle 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
-" Powerline setup
 set laststatus=2
-"set guifont=Liberation_Mono_for_Powerline:h10
 let g:airline_powerline_fonts = 1
-" let g:Powerline_symbols = 'fancy'
 let g:airline_theme='luna'
 let g:airline_left_sep='>'
 
 " the separator used on the right side  
 let g:airline_right_sep='<'
+
+" install git-fugitive
+Plugin 'tpope/vim-fugitive'
