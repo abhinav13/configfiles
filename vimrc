@@ -8,6 +8,7 @@ set autoindent    " align the new line indent with the previous line
 set nocompatible  " dont know what this does
 "filetype off      " Dont know what this does either
 set number        " Show line numbers 
+autocmd CompleteDone * pclose "Close preview window once done
 syntax on
 " Vundle related configs 
 set rtp+=~/.vim/bundle/Vundle.vim/
@@ -52,3 +53,6 @@ filetype plugin indent on    " required
  "    "
  "    " see :h vundle for more details or wiki for FAQ
  "    " Put your non-Plugin stuff after this line
+ 
+
+
