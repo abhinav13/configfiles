@@ -6,27 +6,27 @@ set softtabstop=4 " insert/delete 4 spaces when hitting a TAB/BACKSPACE
 set shiftround    " round indent to multiple of 'shiftwidth'
 set autoindent    " align the new line indent with the previous line
 set nocompatible  " dont know what this does
-filetype off      " Dont know what this does either
+"filetype off      " Dont know what this does either
 set number        " Show line numbers 
-
+syntax on
 " Vundle related configs 
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
-let moria_style='dark'
+set rtp+=~/.vim/bundle/Vundle.vim/
+call vundle#begin()
 
 
 " let Vundle manage Vundle
 " required! 
-Bundle 'gmarik/vundle'
+Plugin 'gmarik/vundle'
 
 " The bundles you install will be listed here
+Plugin 'tpope/vim-fugitive'
 
 filetype plugin indent on
 
 augroup vimrc_autocmds
         autocmd!
         " highlight characters past column 120
-        autocmd FileType python highlight Excess ctermbg=red guibg=Black
+        autocmd FileType python highlight Excess ctermbg=yellow guibg=Black
         autocmd FileType python match Excess /\%120v.*/
         autocmd FileType python set nowrap
 augroup END
@@ -40,8 +40,15 @@ let g:airline_left_sep='>'
 
 " the separator used on the right side  
 let g:airline_right_sep='<'
-
-" install git-fugitive
-Plugin 'tpope/vim-fugitive'
-
 Plugin 'Valloric/YouCompleteMe'
+call vundle#end()   
+filetype plugin indent on    " required
+ "
+ "    " Brief help
+ "    " :PluginList          - list configured plugins
+ "    " :PluginInstall(!)    - install (update) plugins
+ "    " :PluginSearch(!) foo - search (or refresh cache first) for foo
+ "    " :PluginClean(!)      - confirm (or auto-approve) removal of unused plugins
+ "    "
+ "    " see :h vundle for more details or wiki for FAQ
+ "    " Put your non-Plugin stuff after this line
