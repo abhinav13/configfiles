@@ -9,6 +9,12 @@ set nocompatible  " dont know what this does
 filetype off      " Dont know what this does either
 set number        " Show line numbers 
 
+" This is from the stackoverflow page http://stackoverflow.com/questions/597687/changing-variable-names-in-vim
+" For local replace
+nnoremap gr gd[{V%::s/<C-R>///gc<left><left><left>
+" For global replace
+nnoremap gR gD:%s/<C-R>///gc<left><left><left>
+
 " Vundle related configs 
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
