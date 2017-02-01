@@ -1,4 +1,4 @@
-set textwidth=130  " lines longer than 120 columns will be broken
+set textwidth=130  " lines longer than 130 columns will be broken
 set shiftwidth=4  " operation >> indents 4 columns; << unindents 4 columns
 set tabstop=4     " a hard TAB displays as 4 columns
 set expandtab     " insert spaces when hitting TABs
@@ -15,12 +15,31 @@ nnoremap gr gd[{V%::s/<C-R>///gc<left><left><left>
 nnoremap gR gD:%s/<C-R>///gc<left><left><left>
 
 " Vundle related configs 
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
 
-" let Vundle manage Vundle
-" required! 
-Bundle 'gmarik/vundle'
+" let Vundle manage Vundle, required
+Plugin 'VundleVim/Vundle.vim'
+
+" The following are examples of different formats supported.
+" " Keep Plugin commands between vundle#begin/end.
+" " plugin on GitHub repo
+" Plugin 'tpope/vim-fugitive'
+" " plugin from http://vim-scripts.org/vim/scripts.html
+" Plugin 'L9'
+" " Git plugin not hosted on GitHub
+" Plugin 'git://git.wincent.com/command-t.git'
+" " git repos on your local machine (i.e. when working on your own plugin)
+" Plugin 'file:///home/gmarik/path/to/plugin'
+" " The sparkup vim script is in a subdirectory of this repo called vim.
+" " Pass the path to set the runtimepath properly.
+" Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
+" " Install L9 and avoid a Naming conflict if you've already installed a
+" " different version somewhere else.
+" Plugin 'ascenator/L9', {'name': 'newL9'}
+"
+
+
 
 " The bundles you install will be listed here
 
@@ -44,6 +63,10 @@ set laststatus=2
 "This allows you to call git from within vim
 Bundle 'tpope/vim-fugitive'
 
+"Install NerdTree which is a filebrowser that pops up in split when you need it and features a tree like file browsers
+Bundle 'scrooloose/nerdtree'
+
+
 Bundle 'klen/python-mode'
 
  " Python-mode
@@ -58,34 +81,43 @@ Bundle 'klen/python-mode'
  " " [[            Jump on previous class or function (normal, visual, operator modes)
  " " ]]            Jump on next class or function (normal, visual, operator modes)
  " " [M            Jump on previous class or method (normal, visual, operator modes)
- " " ]M            Jump on next class or method (normal, visual, operator modes)
- " let g:pymode_rope = 1 
+" " ]M            Jump on next class or method (normal, visual, operator modes)
+let g:pymode_rope = 1 
  "
  " " Documentation
-" let g:pymode_doc = 1
- "let g:pymode_doc_key = 'K'
+let g:pymode_doc = 1
+let g:pymode_doc_key = 'K'
  "
  " "Linting
- "let g:pymode_lint = 1
-" let g:pymode_lint_checker = "pyflakes,pep8"
+let g:pymode_lint = 1
+let g:pymode_lint_checker = "pyflakes,pep8"
  " " Auto check on save
- "let g:pymode_lint_write = 1
+let g:pymode_lint_write = 1
  "
  " Support virtualenv
- " let g:pymode_virtualenv = 1
+let g:pymode_virtualenv = 1
  
  " Enable breakpoints plugin
- "let g:pymode_breakpoint = 1
- "let g:pymode_breakpoint_key = '<leader>b'
+let g:pymode_breakpoint = 1
+let g:pymode_breakpoint_key = '<leader>b'
  "
  " syntax highlighting
- "let g:pymode_syntax = 1
- "let g:pymode_syntax_all = 1
-" let g:pymode_syntax_indent_errors = g:pymode_syntax_all
- "let g:pymode_syntax_space_errors = g:pymode_syntax_all
+let g:pymode_syntax = 1
+let g:pymode_syntax_all = 1
+let g:pymode_syntax_indent_errors = g:pymode_syntax_all
+let g:pymode_syntax_space_errors = g:pymode_syntax_all
  "
  " autofold code
- "let g:pymode_folding =1 
+let g:pymode_folding =0 
 
+" stop the stupid red line from showing up
+" in the middle of the editor, stupid red line stupid stupid
+let g:pymode_options_colorcolumn = 0
  " automatically change window's cwd to file's dir
- "set autochdir
+set autochdir
+
+ " All of your Plugins must be added before the following line
+ call vundle#end()            " required
+ 
+
+
