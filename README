@@ -1,0 +1,30 @@
+Vim Config files
+
+How to enable vundle
+Create a .vim directory in your home directory.
+create ~/.vim/bundle directory and git clone this repo
+https://github.com/VundleVim/Vundle.vim
+
+Now copy this file as .vimrc in your $HOME
+
+To install plugins. Open vim and run  :PluginInstall. You should see a second split window within vim that shows that 
+plugins are installing. 
+
+The following plugins are installed with vundle in .vimrc
+
+1.Colorscheme solarized
+2.Enable 256 colors in terminal for vim
+3. Plugins managed by vundle
+    a. YouCompleteme. Provides autocompletion. You need to actually run the install in the $HOME/.vim/bundle/YouCompleteMe. This
+    provides auto completion and bunch of other stuff for a lot of languages. you need to install the C language support and
+    javascript support manually by first downloading the plugin using PluginInstall command within vim. Then navigate to 
+    $HOME/.vim/bundle/YouCompleteme directory and run the following commands
+       i. ./install.py --clang-complete. 
+       ii. ./install.py --tern-completer. This supports nodejs and javascript. Make sure they are installed first.
+    b. ColorSolarized. You dont need to do anything within .vimrc besides mention it and install it. More information here
+    https://github.com/altercation/vim-colors-solarized
+    c. Powerline for doing things with git within vim. But I have never gotten this to work or seen it work in terminal window.
+    d. vim fugitive. This is also meant for doing git shit within vim. but havent figured out how to do this from within vim.
+    e. Nerdtree - Navigate filesystem from within vim.
+    f. python-mode. God only knows, just copied it from somewhere. Right now it is disabled.
+    
