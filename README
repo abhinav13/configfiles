@@ -23,6 +23,8 @@ The following plugins are installed with vundle in .vimrc
        ii. ./install.py --tern-completer. This supports nodejs and javascript. Make sure they are installed first.
     b. ColorSolarized. You dont need to do anything within .vimrc besides mention it and install it. More information here
     https://github.com/altercation/vim-colors-solarized
+        Need to clone this repo and move the solarized.vm file to ~/vim/colors directory. Other wise it wont work and everytime
+        you start the editor it will complain about solarized not found or something like that.
     c. Powerline for doing things with git within vim. But I have never gotten this to work or seen it work in terminal window.
     d. vim fugitive. This is also meant for doing git shit within vim. but havent figured out how to do this from within vim.
     e. Nerdtree - Navigate filesystem from within vim.
