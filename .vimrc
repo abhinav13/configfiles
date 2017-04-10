@@ -12,7 +12,7 @@ syntax enable
 "if has('gui_running')
 "    set background=light
 "else
-    set background=dark
+set background=dark
 "endif
 set t_Co=256
 colorscheme solarized
@@ -75,7 +75,13 @@ Bundle 'tpope/vim-fugitive'
 
 "Install NerdTree which is a filebrowser that pops up in split when you need it and features a tree like file browsers
 Bundle 'scrooloose/nerdtree'
-
+"NerdTree configs. Copied from here - http://stackoverflow.com/questions/10303557/map-f2-to-neerdtreetoggle
+"F2 will open NERDTree panel and highlight current file. And when you're in the NERDTree panel, F2 will open file under cursor.
+"So, I can use one button to jump between buffer and NERDTree. (And F3 for preview because it's next to F2)
+silent! nmap <C-p> :NERDTreeToggle<CR>
+silent! map <F2> :NERDTreeFind<CR>
+let g:NERDTreeMapActivateNode="<F2>"
+let g:NERDTreeMapPreview="<F3>"
 
 Bundle 'klen/python-mode'
 
