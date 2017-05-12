@@ -30,7 +30,8 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'Valloric/YouCompleteMe'
 "Plugin 'altercation/vim-colors-solarized'
-Plugin 'Lokaltog/powerline'
+" Plugin 'Lokaltog/powerline'
+Bundle 'powerline/powerline', {'rtp': 'powerline/bindings/vim/'}
 " The following are examples of different formats supported.
 " " Keep Plugin commands between vundle#begin/end.
 " " plugin on GitHub repo
@@ -50,10 +51,10 @@ Plugin 'Lokaltog/powerline'
 "
 
 
-
 " The bundles you install will be listed here
 
 filetype plugin indent on
+set laststatus=2 " This is for vundle
 
 augroup vimrc_autocmds
         autocmd!
@@ -98,7 +99,7 @@ Bundle 'klen/python-mode'
  " " ]]            Jump on next class or function (normal, visual, operator modes)
  " " [M            Jump on previous class or method (normal, visual, operator modes)
 " " ]M            Jump on next class or method (normal, visual, operator modes)
-let g:pymode_rope = 1 
+let g:pymode_rope = 0 
  "
  " " Documentation
 let g:pymode_doc = 1
@@ -118,8 +119,8 @@ let g:pymode_breakpoint = 1
 let g:pymode_breakpoint_key = '<leader>b'
  "
  " syntax highlighting
-let g:pymode_syntax = 1
-let g:pymode_syntax_all = 1
+let g:pymode_syntax = 0
+let g:pymode_syntax_all = 0
 let g:pymode_syntax_indent_errors = g:pymode_syntax_all
 let g:pymode_syntax_space_errors = g:pymode_syntax_all
  "
