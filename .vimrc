@@ -29,9 +29,38 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'Valloric/YouCompleteMe'
-"Plugin 'altercation/vim-colors-solarized'
+Plugin 'vim-airline/vim-airline'
+let g:airline_powerline_fonts = 1
+let g:Powerline_symbols = 'fancy'
+if !exists('g:airline_symbols')
+  let g:airline_symbols = {}
+endif
+
+" unicode symbols
+let g:airline_left_sep = '»'
+let g:airline_left_sep = '▶'
+let g:airline_right_sep = '«'
+let g:airline_right_sep = '◀'
+let g:airline_symbols.linenr = '␊'
+let g:airline_symbols.linenr = '␤'
+let g:airline_symbols.linenr = '¶'
+let g:airline_symbols.branch = '⎇'
+let g:airline_symbols.paste = 'ρ'
+let g:airline_symbols.paste = 'Þ'
+let g:airline_symbols.paste = '∥'
+let g:airline_symbols.whitespace = 'Ξ'
 " Plugin 'Lokaltog/powerline'
 Bundle 'powerline/powerline', {'rtp': 'powerline/bindings/vim/'}
+" More powerline shit
+" copied from here
+" https://coderwall.com/p/yiot4q/setup-vim-powerline-and-iterm2-on-mac-os-x
+set guifont=Inconsolata\ for\ Powerline:h15
+let g:Powerline_symbols = 'fancy'
+set encoding=utf-8
+set fillchars+=stl:\ ,stlnc:\
+" Powerline setup
+"set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ 9
+set laststatus=2
 " The following are examples of different formats supported.
 " " Keep Plugin commands between vundle#begin/end.
 " " plugin on GitHub repo
@@ -64,10 +93,6 @@ augroup vimrc_autocmds
         autocmd FileType python set nowrap
 augroup END
 
-"  Bundle 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
-" Powerline setup
-set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ 9
-set laststatus=2
 
 
 "Install Fugitive which is a Git Plugin
