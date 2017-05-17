@@ -38,3 +38,6 @@ Thumbs.db
 # Python packagin generated #
 *.egg-info
 .ropeproject
+
+# Vim files
+*.swp
